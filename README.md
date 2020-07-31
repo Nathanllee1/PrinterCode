@@ -44,11 +44,11 @@ Restart the system. Clone this repository and try to run *printertest.py*.
 git clone https://github.com/Nathanllee1/PrinterCode.git
 cd PythonCode
 python3 printertest.py
-python3 image.py
+python3 image.py astley.jpg
 ```
 
 Let me know if you have any issues.
 
 -------------------------------------------------
 
-Nathan Note: Added [this](https://github.com/adafruit/Python-Thermal-Printer/pull/39) to get PIL compatible with python3, going to get the image to scale to 384 pixels with PIL instead of just cropping
+Nathan Note: Added [this](https://github.com/adafruit/Python-Thermal-Printer/pull/39) to get PIL compatible with python3 and got the image to scale to 384 pixels with PIL instead of just cropping
