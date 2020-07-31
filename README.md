@@ -41,9 +41,10 @@ sudo lpoptions -d ZJ-58
 Restart the system. Clone this repository and try to run *printertest.py*.
 
 ```
-git clone https://github.com/galacticfan/Python-Thermal-Printer/
-cd Python-Thermal-Printer
+git clone https://github.com/Nathanllee1/PrinterCode.git
+cd PythonCode
 python3 printertest.py
+python3 image.py
 ```
 
 Let me know if you have any issues.
