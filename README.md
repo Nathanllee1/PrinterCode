@@ -47,3 +47,7 @@ python3 printertest.py
 ```
 
 Let me know if you have any issues.
+
+-------------------------------------------------
+
+Nathan Note: Added [this](https://github.com/adafruit/Python-Thermal-Printer/pull/39) to get PIL compatible with python3, going to get the image to scale to 384 pixels with PIL instead of just cropping
