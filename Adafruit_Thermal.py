@@ -557,10 +557,14 @@ class Adafruit_Thermal(Serial):
 		if image.mode != '1':
 			image = image.convert('1')
 
+
+		basewidth = 384
+		wpercent = (basewidth/float(image.size[0]))
+		hsize = int((float(image.size[1])*float(wpercent)))
+		image = image.resize((basewidth,hsize), Image.ANTIALIAS)
+
 		width  = image.size[0]
 		height = image.size[1]
-		if width > 384:
-			width = 384
 		rowBytes = math.floor((width + 7) / 8)
 		bitmap   = bytearray(rowBytes * height)
 		pixels   = image.load()
