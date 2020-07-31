@@ -1,6 +1,6 @@
-# Python-Thermal-Printer Module
+# Printer Chat Printer Code
 
-Python3 port of the original Adafruit [Python-Thermal-Printer](https://github.com/adafruit/Python-Thermal-Printer) library.
+Utilizes the Python3 port of the original Adafruit [Python-Thermal-Printer](https://github.com/adafruit/Python-Thermal-Printer) library.
 
 ## Getting Started
 
