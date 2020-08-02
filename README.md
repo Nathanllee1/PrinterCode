@@ -4,7 +4,7 @@ Utilizes the Python3 port of the original Adafruit [Python-Thermal-Printer](http
 
 ## Getting Started
 
-Install Raspbian Buster and Wire the printer according to [this](https://learn.adafruit.com/networked-thermal-printer-using-cups-and-raspberry-pi/connect-and-configure-printer). I powered the printer with the GPIO pins as well.
+Install Raspbian and wire the printer according to [this](https://learn.adafruit.com/networked-thermal-printer-using-cups-and-raspberry-pi/connect-and-configure-printer). I powered the printer with the GPIO pins as well.
 
 Run a test to see if the printer is working by punching in these commands into the terminal.
 
@@ -44,7 +44,7 @@ Restart the system. Clone this repository and try to run *printertest.py*.
 git clone https://github.com/Nathanllee1/PrinterCode.git
 cd PythonCode
 python3 printertest.py
-python3 image.py astley.jpg
+python3 image.py pictures/astley.jpg
 ```
 
 Let me know if you have any issues.

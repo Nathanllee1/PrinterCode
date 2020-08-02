@@ -1,9 +1,6 @@
 from Adafruit_Thermal import *
-from PIL import Image, ImageDraw
-
-image = Image.open("astley.jpg")
+import sys
 
 printer = Adafruit_Thermal("/dev/serial0", 19200, timeout=5)
-
-printer.printImage(image, True)
+printer.printImage(str(sys.argv[1]), True)
 printer.feed(3)
