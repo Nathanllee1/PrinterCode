@@ -42,9 +42,9 @@ Restart the system. Clone this repository and try to run *printertest.py*.
 
 ```
 git clone https://github.com/Nathanllee1/PrinterCode.git
-cd PythonCode
+cd PrinterCode
+python3 image.py pictures/testImage.jpg
 python3 printertest.py
-python3 image.py pictures/astley.jpg
 ```
 
 Let me know if you have any issues.
