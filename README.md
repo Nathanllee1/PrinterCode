@@ -1,5 +1,6 @@
 # Printer Chat Printer Code
 
+The [app](https://github.com/Nathanllee1/PrintChatApp)
 Utilizes the Python3 port of the original Adafruit [Python-Thermal-Printer](https://github.com/adafruit/Python-Thermal-Printer) library.
 
 ## Getting Started
