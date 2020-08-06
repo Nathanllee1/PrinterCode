@@ -557,7 +557,6 @@ class Adafruit_Thermal(Serial):
 		if image.mode != '1':
 			image = image.convert('1')
 
-
 		basewidth = 384
 		wpercent = (basewidth/float(image.size[0]))
 		hsize = int((float(image.size[1])*float(wpercent)))

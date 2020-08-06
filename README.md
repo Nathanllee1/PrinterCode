@@ -47,6 +47,8 @@ python3 image.py pictures/testImage.jpg
 python3 printertest.py
 ```
 
+Fill out ```credentials.json.template``` with your firebase user id and rename the file to ```credentials.json```
+
 Let me know if you have any issues.
 
 -------------------------------------------------
