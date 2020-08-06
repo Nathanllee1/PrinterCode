@@ -3,6 +3,7 @@
 The [app](https://github.com/Nathanllee1/PrintChatApp)
 
 Utilizes the Python3 port of the original Adafruit [Python-Thermal-Printer](https://github.com/adafruit/Python-Thermal-Printer) library.
+Added [this](https://github.com/adafruit/Python-Thermal-Printer/pull/39) to get PIL compatible with python3 and got the image to scale to 384 pixels with PIL instead of just cropping
 
 ## Getting Started
 
@@ -55,9 +56,6 @@ npm install
 ```
 
 Fill out ```credentials.json.template``` with your firebase user id and rename the file to ```credentials.json```
+We will have the app automatically fill it in later
 
-Let me know if you have any issues.
-
--------------------------------------------------
-
-Nathan Note: Added [this](https://github.com/adafruit/Python-Thermal-Printer/pull/39) to get PIL compatible with python3 and got the image to scale to 384 pixels with PIL instead of just cropping
+Let me know if you have any issues. 
