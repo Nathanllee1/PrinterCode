@@ -21,7 +21,7 @@ Update the system and install prequisities.
 
 ```
 sudo apt-get update
-sudo apt-get install git cups wiringpi build-essential libcups2-dev libcupsimage2-dev python-serial python-pil python-unidecode
+sudo apt-get install git cups wiringpi build-essential libcups2-dev libcupsimage2-dev python-serial nodejs python-pil python-unidecode npm
 ```
 
 Install the printer driver. Don't worry about the warnings that g++ gives.
@@ -47,6 +47,11 @@ git clone https://github.com/Nathanllee1/PrinterCode.git
 cd PrinterCode
 python3 image.py pictures/testImage.jpg
 python3 printertest.py
+```
+
+Install server requirements
+```
+npm install
 ```
 
 Fill out ```credentials.json.template``` with your firebase user id and rename the file to ```credentials.json```

@@ -1,0 +1,22 @@
+{
+  "name": "printserver",
+  "version": "1.0.0",
+  "description": "The [app](https://github.com/Nathanllee1/PrintChatApp)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nathanllee1/PrinterCode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nathanllee1/PrinterCode/issues"
+  },
+  "homepage": "https://github.com/Nathanllee1/PrinterCode#readme",
+  "dependencies": {
+    "firebase": "^7.17.1"
+  }
+}
