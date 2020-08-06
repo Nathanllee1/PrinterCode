@@ -3,7 +3,7 @@
 The [app](https://github.com/Nathanllee1/PrintChatApp)
 
 Utilizes the Python3 port of the original Adafruit [Python-Thermal-Printer](https://github.com/adafruit/Python-Thermal-Printer) library.
-Added [this](https://github.com/adafruit/Python-Thermal-Printer/pull/39) to get PIL compatible with python3 and got the image to scale to 384 pixels with PIL instead of just cropping
+Added [this](https://github.com/adafruit/Python-Thermal-Printer/pull/39) to get PIL compatible with python3 and got the image to scale to the size of the reciept paper instead of just cropping everything that didn't fit
 
 ## Getting Started
 
@@ -41,12 +41,12 @@ sudo lpadmin -p ZJ-58 -E -v serial:/dev/serial0?baud=19200 -m zjiang/ZJ-58.ppd
 sudo lpoptions -d ZJ-58
 ```
 
-Restart the system. Clone this repository and try to run *printertest.py*.
+Restart the system. Clone this repository and try to run some tests
 
 ```
 git clone https://github.com/Nathanllee1/PrinterCode.git
 cd PrinterCode
-python3 image.py pictures/testImage.jpg
+python3 image.py testPictures/testImage.jpg
 python3 printertest.py
 ```
 
@@ -55,7 +55,7 @@ Install server requirements
 npm install
 ```
 
-Fill out ```credentials.json.template``` with your firebase user id and rename the file to ```credentials.json```
+Copy ```credentials.json.template``` into a file named ```credentials.json``` and fill out your firebase user id
 We will have the app automatically fill it in later
 
-Let me know if you have any issues. 
+Let me know if you have any issues.
