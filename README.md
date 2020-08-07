@@ -39,6 +39,9 @@ Make the printer the default printer. This is useful if you are going to be doin
 ```
 sudo lpadmin -p ZJ-58 -E -v serial:/dev/serial0?baud=19200 -m zjiang/ZJ-58.ppd
 sudo lpoptions -d ZJ-58
+```
+Restart the pi
+```
 sudo reboot
 ```
 
@@ -49,11 +52,6 @@ git clone https://github.com/Nathanllee1/PrinterCode.git
 cd PrinterCode
 python3 image.py testPictures/testImage.jpg
 python3 printertest.py
-```
-
-Install server requirements
-```
-npm install
 ```
 
 Copy ```credentials.json.template``` into a file named ```credentials.json``` and fill out your firebase user id
