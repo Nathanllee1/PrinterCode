@@ -35,26 +35,23 @@ const observer = query.onSnapshot(newMessage => {
     if (change.type === 'added') {
       const data = change.doc.data()
       console.log(data)
-      printImage(data.Data, 'pictures/' + data.Data.split("=").slice(-1)[0])
+      printImage(data.Data, __dirname + '/pictures/' + data.Data.split("=").slice(-1)[0].replace("-", ""))
     }
   })
-  // ...
 }, err => {
   console.log(`Encountered error: ${err}`);
 });
 
 var download = function(uri, filename, callback){
   request.head(uri, function(err, res, body){
-    console.log('content-type:', res.headers['content-type']);
-    console.log('content-length:', res.headers['content-length']);
-
+    console.log(filename)
     request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
   });
 };
 
 function printImage(dataURL, token) {
   download(dataURL,token, function() {
-    exec("python3 image.py token", (error, stdout, stderr) => {
+    exec("python3 image.py " + token, (error, stdout, stderr) => {
       if (error) {
           console.log(`error: ${error.message}`);
           return;
@@ -66,6 +63,4 @@ function printImage(dataURL, token) {
       console.log(`stdout: ${stdout}`);
     });
   })
-
-
 }
