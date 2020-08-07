@@ -22,7 +22,7 @@ Update the system and install prequisities.
 
 ```
 sudo apt-get update
-sudo apt-get install git cups wiringpi build-essential libcups2-dev libcupsimage2-dev python-serial nodejs python-pil python-unidecode npm
+sudo apt-get install git cups wiringpi build-essential libcups2-dev libcupsimage2-dev python3-serial nodejs python3-pil python3-unidecode npm
 ```
 
 Install the printer driver. Don't worry about the warnings that g++ gives.
@@ -39,9 +39,10 @@ Make the printer the default printer. This is useful if you are going to be doin
 ```
 sudo lpadmin -p ZJ-58 -E -v serial:/dev/serial0?baud=19200 -m zjiang/ZJ-58.ppd
 sudo lpoptions -d ZJ-58
+sudo reboot
 ```
 
-Restart the system. Clone this repository and try to run some tests
+Clone this repository and try to run some tests
 
 ```
 git clone https://github.com/Nathanllee1/PrinterCode.git
