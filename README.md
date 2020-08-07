@@ -7,7 +7,7 @@ Added [this](https://github.com/adafruit/Python-Thermal-Printer/pull/39) to get 
 
 ## Getting Started
 
-Install Raspbian and wire the printer according to [this](https://learn.adafruit.com/networked-thermal-printer-using-cups-and-raspberry-pi/connect-and-configure-printer). I powered the printer with the GPIO pins as well.
+Install Raspbian (I used raspian lite so there would be lower overhead and it would be more stable) and wire the printer according to [this](https://learn.adafruit.com/networked-thermal-printer-using-cups-and-raspberry-pi/connect-and-configure-printer). I powered the printer with the GPIO pins as well.
 
 Run a test to see if the printer is working by punching in these commands into the terminal.
 
