@@ -548,11 +548,13 @@ class Adafruit_Thermal(Serial):
 	# the Imaging Library to perform such operations before
 	# passing the result to this function.
 	def printImage(self, image_file, LaaT=False):
-		from PIL import Image
+		from PIL import Image, ImageEnhance
 		image = image_file
 
 		if isinstance(image_file, str):
-			image = Image.open(image_file)
+			image = Image.open(image_file).convert('LA')
+			#enhancer = ImageEnhance.Contrast(image)
+			#image = enhancer.enhance(10.0)
 
 		if image.mode != '1':
 			image = image.convert('1')

@@ -1,3 +1,4 @@
+
 from Adafruit_Thermal import *
 import sys
 

@@ -1,6 +1,10 @@
-const { execSync } = require("child_process");
+const { exec } = require("child_process");
 var fs = require('fs');
-var http = require('https');
+var request = require('request');
+
+
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
 var firebase = require("firebase/app");
 var credentials = require("./credentials.json")
 // Add the Firebase products that you want to use
@@ -21,7 +25,7 @@ firebase.initializeApp({
 // Initialize Firebase
 var db = firebase.firestore()
 
-console.log('Firebase Initialized')
+console.log("Initialized")
 
 const query = db.collection("Messages")
   .where("Receiver", "==", credentials.uid)
@@ -32,37 +36,24 @@ const observer = query.onSnapshot(newMessage => {
   newMessage.docChanges().forEach(change => {
     if (change.type === 'added') {
       const data = change.doc.data()
-      /*console.log(newMessage.getDocument().getId())*/
-      const filename = new URL(data.Data).pathname.split("/").slice(-1)[0]
-      console.log(filename)
-      printImage(data.Data, 'pictures/' + filename)
-
-      /*newMessage.set({
-        printed: true
-      })
-      */
-      //db.ref('Messages/' +)
+      console.log(data)
+      printImage(data.Data, __dirname + '/pictures/' + data.Data.split("=").slice(-1)[0].replace("-", "") + ".png")
     }
   })
 }, err => {
   console.log(`Encountered error: ${err}`);
 });
 
-var download = async function(url, dest, cb) {
-  var file = fs.createWriteStream(dest);
-  await http.get(url, function(response) {
-    response.pipe(file);
-    file.on('finish', function() {
-      file.close(cb);
-    });
+var download = function(uri, filename, callback){
+  request.head(uri, async function(err, res, body){
+    console.log(filename)
+    await request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
   });
-  return 'Done'
-}
+};
 
-function printImage(dataURL, token) {
-  download(dataURL,token, function() {
-    console.log("python3 image.py " + token)
-    execSync("python3 image.py " + token, (error, stdout, stderr) => {
+async function printImage(dataURL, token) {
+  await download(dataURL,token, async function() {
+    await exec("python3 image.py " + token, (error, stdout, stderr) => {
       if (error) {
           console.log(`error: ${error.message}`);
           return;
@@ -71,7 +62,7 @@ function printImage(dataURL, token) {
           console.log(`stderr: ${stderr}`);
           return;
       }
-      console.log(`stdout: ${stdout}`, ' Printed');
+      console.log(`stdout: ${stdout}`);
     });
   })
 }
