@@ -7,7 +7,9 @@ Added [this](https://github.com/adafruit/Python-Thermal-Printer/pull/39) to get 
 
 ## Getting Started
 
-Install Raspbian (I used raspian lite so there would be lower overhead and it would be more stable) and wire the printer according to [this](https://learn.adafruit.com/networked-thermal-printer-using-cups-and-raspberry-pi/connect-and-configure-printer). I powered the printer with the GPIO pins as well.
+[Install Raspbian](https://www.raspberrypi.org/documentation/installation/installing-images/) (I used raspian lite so there would be lower overhead and it would be more stable) 
+
+Wire the printer according to [this](https://learn.adafruit.com/networked-thermal-printer-using-cups-and-raspberry-pi/connect-and-configure-printer). **Don't mess this up!** I powered the printer with the GPIO pins as well.
 
 Run a test to see if the printer is working by punching in these commands into the terminal.
 
@@ -39,6 +41,9 @@ Make the printer the default printer. This is useful if you are going to be doin
 ```
 sudo lpadmin -p ZJ-58 -E -v serial:/dev/serial0?baud=19200 -m zjiang/ZJ-58.ppd
 sudo lpoptions -d ZJ-58
+```
+Restart the pi
+```
 sudo reboot
 ```
 
@@ -49,11 +54,6 @@ git clone https://github.com/Nathanllee1/PrinterCode.git
 cd PrinterCode
 python3 image.py testPictures/testImage.jpg
 python3 printertest.py
-```
-
-Install server requirements
-```
-npm install
 ```
 
 Copy ```credentials.json.template``` into a file named ```credentials.json``` and fill out your firebase user id
