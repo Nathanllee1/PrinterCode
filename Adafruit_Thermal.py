@@ -553,8 +553,8 @@ class Adafruit_Thermal(Serial):
 
 		if isinstance(image_file, str):
 			image = Image.open(image_file).convert('LA')
-			#enhancer = ImageEnhance.Contrast(image)
-			#image = enhancer.enhance(10.0)
+			enhancer = ImageEnhance.Contrast(image)
+			image = enhancer.enhance(10.0)
 
 		if image.mode != '1':
 			image = image.convert('1')
